@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Gradient definitions -->
+    <defs>
+        <linearGradient id="bgGradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#0A0A0A"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </linearGradient>
+        <linearGradient id="accentGradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#4A90E2"/>
+            <stop offset="100%" stop-color="#357ABD"/>
+        </linearGradient>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+    </defs>
+
+    <!-- Background -->
+    <rect width="512" height="512" fill="url(#bgGradient)"/>
+
+    <!-- VAR text -->
+    <text x="256" y="280" 
+          font-family="'Consolas', monospace" 
+          font-size="120" 
+          font-weight="bold" 
+          fill="url(#accentGradient)" 
+          text-anchor="middle" 
+          dominant-baseline="middle"
+          filter="url(#glow)">var</text>
+
+    <!-- Multiple small waves -->
+    <g stroke="#E6F3FF" stroke-width="2" stroke-linecap="round" opacity="0.9">
+        <!-- First wave -->
+        <path d="M116 320C126 310 146 310 156 320C166 330 186 330 196 320" 
+              fill="none"/>
+        <!-- Second wave -->
+        <path d="M196 320C206 310 226 310 236 320C246 330 266 330 276 320" 
+              fill="none"/>
+        <!-- Third wave -->
+        <path d="M276 320C286 310 306 310 316 320C326 330 346 330 356 320" 
+              fill="none"/>
+        <!-- Fourth wave -->
+        <path d="M356 320C366 310 386 310 396 320" 
+              fill="none"/>
+    </g>
+</svg> 

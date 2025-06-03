@@ -1,0 +1,74 @@
+{
+  "name": "var-name",
+  "displayName": "Var Name",
+  "description": "Translate Chinese to programming variable names using AI models",
+  "version": "0.0.1",
+  "icon": "images/logo.png",
+  "publisher": "w2xi",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:var-name.translate"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "var-name.translate",
+        "title": "AI Translate to Variable Names"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "var-name.translate",
+        "key": "ctrl+shift+t",
+        "mac": "cmd+shift+t"
+      }
+    ],
+    "configuration": {
+      "title": "Var Name",
+      "properties": {
+        "var-name.provider": {
+          "type": "string",
+          "default": "deepseek",
+          "enum": [
+            "deepseek",
+            "openai",
+            "qwen"
+          ],
+          "description": "AI provider to use for translation"
+        },
+        "var-name.apiKey": {
+          "type": "string",
+          "description": "API key for the selected AI provider"
+        },
+        "var-name.baseUrl": {
+          "type": "string",
+          "description": "Custom base URL for API (optional)"
+        },
+        "var-name.model": {
+          "type": "string",
+          "default": "deepseek-chat",
+          "description": "Model name to use"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
