@@ -1,67 +1,52 @@
-# Var Name VSCode Extension
+# 🔤 Var Name
 
-一个基于大模型的VSCode插件，用于将中文翻译成多种编程语言的变量命名格式。
+English | [中文](./README-zh_CN.md)
 
-## 功能特性
+A VSCode extension powered by large language models that translates Chinese text into various programming language variable naming conventions.
 
-- 🚀 快捷键调用（Ctrl+Shift+T / Cmd+Shift+T）
-- 🤖 支持多种AI模型（OpenAI、DeepSeek、Qwen等）
-- 📝 生成多种命名格式：
-  - camelCase（驼峰命名法）
-  - PascalCase（帕斯卡命名法）
-  - snake_case（下划线命名法）
-  - CONSTANT_CASE（常量命名法）
-  - kebab-case（短横线命名法）
-- ⌨️ 键盘导航和一键复制
-- ⚙️ 灵活的配置选项
+## ✨ Features
 
-## 安装
+- 🚀 Quick access via shortcut (Ctrl+Shift+T / Cmd+Shift+T)
+- 🤖 Multiple AI model support (OpenAI, DeepSeek, Qwen, etc.)
+- 📝 Generates multiple naming conventions:
+  - camelCase
+  - PascalCase
+  - snake_case
+  - CONSTANT_CASE
+  - kebab-case
+- ⌨️ Keyboard navigation and one-click copy
+- ⚙️ Flexible configuration options
 
-1. 在VSCode中打开扩展面板（Ctrl+Shift+X）
-2. 搜索 "Var Name"
-3. 点击安装
+## 📥 Installation
 
-## 配置
+1. Open the Extensions panel in VSCode (Ctrl+Shift+X)
+2. Search for "Var Name"
+3. Click Install
 
-在VSCode设置中配置以下选项：
+## ⚙️ Configuration
 
-- `var-name.provider`: AI提供商（openai/deepseek/qwen）
-- `var-name.apiKey`: API密钥
-- `var-name.baseUrl`: 自定义API地址（可选）
-- `var-name.model`: 模型名称
+| Key | Description | Value |
+|-----|-------------|--------|
+| `var-name.provider` | AI Provider | `openai` / `deepseek` / `qwen` |
+| `var-name.apiKey` | API Key | Your API key string |
+| `var-name.baseUrl` | Custom API URL | Optional custom endpoint |
+| `var-name.model` | Model Name | Model identifier string |
 
-## 使用方法
+## 🎯 Usage
 
-1. 按下快捷键 `Ctrl+Shift+T`（Mac: `Cmd+Shift+T`）
-2. 在输入框中输入中文文本
-3. 等待AI翻译完成
-4. 使用上下箭头选择命名格式
-5. 按回车键复制到剪贴板
+1. Press shortcut `Ctrl+Shift+T` (Mac: `Cmd+Shift+T`)
+2. Enter Chinese text in the input box
+3. Wait for AI translation
+4. Use arrow keys to select naming convention
+5. Press Enter to copy to clipboard
 
-## 示例
+## 💡 Example
 
-输入：`是否显示弹窗`
+Input: `是否显示弹窗`
 
-输出：
+Output:
 - camelCase: `isShowModal`
 - PascalCase: `IsShowModal`
 - snake_case: `is_show_modal`
 - CONSTANT_CASE: `IS_SHOW_MODAL`
 - kebab-case: `is-show-modal`
-
-## 开发
-
-\`\`\`bash
-# 安装依赖
-npm install
-
-# 编译
-npm run compile
-
-# 监听模式
-npm run watch
-\`\`\`
-
-## 许可证
-
-MIT
