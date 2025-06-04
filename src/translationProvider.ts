@@ -16,13 +16,13 @@ export class TranslationProvider {
       provider: config.get<string>("provider", ""),
       apiKey: config.get<string>("apiKey", ""),
       baseUrl: config.get<string>("baseUrl", ""),
-      model: config.get<string>("model", "deepseek-chat"), // gpt-3.5-turbo
+      model: config.get<string>("model", ""),
     }
   }
 
   private getApiUrl(provider: string, baseUrl?: string): string {
     if (baseUrl) {
-      return `${baseUrl}/v1/chat/completions`
+      return baseUrl
     }
 
     switch (provider) {
@@ -31,7 +31,7 @@ export class TranslationProvider {
       case "deepseek":
         return "https://api.deepseek.com/v1/chat/completions"
       case "qwen":
-        return "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
+        return "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
       default:
         return "https://api.openai.com/v1/chat/completions"
     }
