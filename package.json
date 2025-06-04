@@ -2,7 +2,7 @@
   "name": "var-name",
   "displayName": "Var Name",
   "description": "Translate Chinese to programming variable names using AI models",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "images/logo.png",
   "publisher": "w2xi",
   "engines": {
