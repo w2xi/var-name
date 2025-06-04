@@ -5,6 +5,9 @@
   "version": "0.0.2",
   "icon": "images/logo.png",
   "publisher": "w2xi",
+  "repository": {
+    "url": "https://github.com/w2xi/var-name"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },
