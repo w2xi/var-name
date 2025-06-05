@@ -1,7 +1,7 @@
 {
   "name": "var-name",
   "displayName": "Var Name",
-  "description": "%var-name.description%",
+  "description": "Generate variable names using AI models",
   "version": "0.0.3",
   "private": true,
   "icon": "images/logo.png",

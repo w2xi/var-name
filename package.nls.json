@@ -1,5 +1,4 @@
 {
-    "var-name.description": "Generate variable names using AI models",
     "var-name.translate.title": "Generate Variable Names",
     "var-name.provider.description": "AI provider to use for translation",
     "var-name.apiKey.description": "API key for the selected AI provider",

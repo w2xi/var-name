@@ -1,5 +1,4 @@
 {
-    "var-name.description": "使用AI模型生成变量名",
     "var-name.translate.title": "生成变量名",
     "var-name.provider.description": "AI提供商",
     "var-name.apiKey.description": "API密钥",
