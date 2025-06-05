@@ -1,5 +1,6 @@
 {
     "Please configure API Key in settings first": "请先在设置中配置API Key",
+    "Please configure Base URL in settings first": "请先在设置中配置Base URL",
     "Invalid API Key, please check your configuration": "API Key 无效，请检查配置",
     "API rate limit exceeded, please try again later": "API 调用频率超限，请稍后重试",
     "Request timeout, please check your network connection": "请求超时，请检查网络连接",

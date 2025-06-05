@@ -1,7 +1,6 @@
 {
     "var-name.translate.title": "Generate Variable Names",
-    "var-name.provider.description": "AI provider to use for translation",
     "var-name.apiKey.description": "API key for the selected AI provider",
-    "var-name.baseUrl.description": "Custom base URL for API (optional)",
+    "var-name.baseURL.description": "Custom base URL for API (optional)",
     "var-name.model.description": "Model name to use"
 }

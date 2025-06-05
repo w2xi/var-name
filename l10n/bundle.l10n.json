@@ -1,5 +1,6 @@
 {
     "Please configure API Key in settings first": "Please configure API Key in settings first",
+    "Please configure Base URL in settings first": "Please configure Base URL in settings first",
     "Invalid API Key, please check your configuration": "Invalid API Key, please check your configuration",
     "API rate limit exceeded, please try again later": "API rate limit exceeded, please try again later",
     "Request timeout, please check your network connection": "Request timeout, please check your network connection",

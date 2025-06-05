@@ -37,24 +37,14 @@
     "configuration": {
       "title": "Var Name",
       "properties": {
-        "var-name.provider": {
-          "type": "string",
-          "default": "deepseek",
-          "enum": [
-            "deepseek",
-            "openai",
-            "qwen"
-          ],
-          "description": "%var-name.provider.description%"
-        },
         "var-name.apiKey": {
           "type": "string",
           "description": "%var-name.apiKey.description%"
         },
-        "var-name.baseUrl": {
+        "var-name.baseURL": {
           "type": "string",
           "default": "https://api.deepseek.com/v1/chat/completions",
-          "description": "%var-name.baseUrl.description%"
+          "description": "%var-name.baseURL.description%"
         },
         "var-name.model": {
           "type": "string",

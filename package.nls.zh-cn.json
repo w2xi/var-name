@@ -1,7 +1,6 @@
 {
     "var-name.translate.title": "生成变量名",
-    "var-name.provider.description": "AI提供商",
     "var-name.apiKey.description": "API密钥",
-    "var-name.baseUrl.description": "自定义API地址",
+    "var-name.baseURL.description": "自定义API地址",
     "var-name.model.description": "模型名称"
 }

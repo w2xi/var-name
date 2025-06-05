@@ -13,27 +13,9 @@ export class TranslationProvider {
   private getConfig() {
     const config = vscode.workspace.getConfiguration("var-name")
     return {
-      provider: config.get<string>("provider", ""),
       apiKey: config.get<string>("apiKey", ""),
-      baseUrl: config.get<string>("baseUrl", ""),
+      baseURL: config.get<string>("baseURL", ""),
       model: config.get<string>("model", ""),
-    }
-  }
-
-  private getApiUrl(provider: string, baseUrl?: string): string {
-    if (baseUrl) {
-      return baseUrl
-    }
-
-    switch (provider) {
-      case "openai":
-        return "https://api.openai.com/v1/chat/completions"
-      case "deepseek":
-        return "https://api.deepseek.com/v1/chat/completions"
-      case "qwen":
-        return "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions"
-      default:
-        return "https://api.openai.com/v1/chat/completions"
     }
   }
 
@@ -68,13 +50,16 @@ export class TranslationProvider {
     if (!config.apiKey) {
       throw new Error(vscode.l10n.t("Please configure API Key in settings first"))
     }
+    
+    if (!config.baseURL) {
+      throw new Error(vscode.l10n.t("Please configure Base URL in settings first"))
+    }
 
-    const apiUrl = this.getApiUrl(config.provider, config.baseUrl)
     const prompt = this.createPrompt(text)
 
     try {
       const response = await axios.post(
-        apiUrl,
+        config.baseURL,
         {
           model: config.model,
           messages: [

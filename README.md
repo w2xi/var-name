@@ -27,9 +27,8 @@ A VSCode extension powered by large language models that translates Chinese text
 
 | Key | Description | Value |
 |-----|-------------|--------|
-| `var-name.provider` | AI Provider | `openai` / `deepseek` / `qwen` |
 | `var-name.apiKey` | API Key | Your API key string |
-| `var-name.baseUrl` | Custom API URL | Optional custom endpoint |
+| `var-name.baseURL` | Custom API URL | Optional custom endpoint |
 | `var-name.model` | Model Name | Model identifier string |
 
 ## 🎯 Usage
