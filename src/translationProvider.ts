@@ -66,7 +66,7 @@ export class TranslationProvider {
     const config = this.getConfig()
 
     if (!config.apiKey) {
-      throw new Error("请先在设置中配置API Key")
+      throw new Error(vscode.l10n.t("Please configure API Key in settings first"))
     }
 
     const apiUrl = this.getApiUrl(config.provider, config.baseUrl)
@@ -97,33 +97,33 @@ export class TranslationProvider {
 
       const content = response.data.choices[0].message.content.trim()
 
-      // 尝试解析JSON响应
+      // try to parse JSON response
       try {
         const result = JSON.parse(content)
 
-        // 验证返回的数据格式
+        // validate the return data format
         const requiredKeys = ["camelCase", "PascalCase", "snake_case", "CONSTANT_CASE", "kebab-case"]
         for (const key of requiredKeys) {
           if (!result[key]) {
-            throw new Error(`缺少必需的字段: ${key}`)
+            throw new Error(vscode.l10n.t("Missing required field: {0}", key))
           }
         }
 
         return result as TranslationResult
       } catch (parseError) {
-        // 如果JSON解析失败，尝试从文本中提取
+        // if JSON parsing failed, try to extract from text
         return this.fallbackParse(content, text)
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {
         if (error.response?.status === 401) {
-          throw new Error("API Key 无效，请检查配置")
+          throw new Error(vscode.l10n.t("Invalid API Key, please check your configuration"))
         } else if (error.response?.status === 429) {
-          throw new Error("API 调用频率超限，请稍后重试")
+          throw new Error(vscode.l10n.t("API rate limit exceeded, please try again later"))
         } else if (error.code === "ECONNABORTED") {
-          throw new Error("请求超时，请检查网络连接")
+          throw new Error(vscode.l10n.t("Request timeout, please check your network connection"))
         } else {
-          throw new Error(`API 调用失败: ${error.response?.data?.error?.message || error.message}`)
+          throw new Error(vscode.l10n.t("API call failed: {0}", error.response?.data?.error?.message || error.message))
         }
       }
       throw error
@@ -131,7 +131,7 @@ export class TranslationProvider {
   }
 
   private fallbackParse(content: string, originalText: string): TranslationResult {
-    // 简单的后备解析逻辑
+    // simple fallback parsing logic
     const englishText = this.simpleTranslate(originalText)
 
     return {
@@ -144,7 +144,7 @@ export class TranslationProvider {
   }
 
   private simpleTranslate(text: string): string {
-    // 简单的中英文映射（实际项目中可以扩展）
+    // simple Chinese-English mapping (can be extended in actual projects)
     const mapping: { [key: string]: string } = {
       是否: "is",
       显示: "show",

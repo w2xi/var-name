@@ -10,14 +10,13 @@ export function activate(context: vscode.ExtensionContext) {
 
   const disposable = vscode.commands.registerCommand("var-name.translate", async () => {
     try {
-      // 显示输入框
       const input = await vscode.window.showInputBox({
-        prompt: "请输入要翻译的中文",
-        placeHolder: "例如：是否显示弹窗",
+        prompt: vscode.l10n.t("Enter text to translate"),
+        placeHolder: vscode.l10n.t("Example: Show modal dialog"),
         validateInput: (text) => {
           console.log('text', text)
           if (!text || text.trim().length === 0) {
-            return "请输入有效的中文文本"
+            return vscode.l10n.t("Please enter valid text")
           }
           return null
         },
@@ -27,27 +26,25 @@ export function activate(context: vscode.ExtensionContext) {
         return
       }
 
-      // 显示加载状态
       await vscode.window.withProgress(
         {
           location: vscode.ProgressLocation.Notification,
-          title: "正在翻译...",
+          title: vscode.l10n.t("Translating..."),
           cancellable: false,
         },
         async (progress) => {
           try {
-            // 调用翻译服务
             const translations = await translationProvider.translate(input.trim())
 
-            // 显示选择列表
+            // show select list
             await quickPickManager.showTranslations(translations)
           } catch (error) {
-            vscode.window.showErrorMessage(`翻译失败: ${error instanceof Error ? error.message : "未知错误"}`)
+            vscode.window.showErrorMessage(vscode.l10n.t("Translation failed: {0}", error instanceof Error ? error.message : vscode.l10n.t("Unknown error")))
           }
         },
       )
     } catch (error) {
-      vscode.window.showErrorMessage(`操作失败: ${error instanceof Error ? error.message : "未知错误"}`)
+      vscode.window.showErrorMessage(vscode.l10n.t("Operation failed: {0}", error instanceof Error ? error.message : vscode.l10n.t("Unknown error")))
     }
   })
 

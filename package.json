@@ -1,8 +1,9 @@
 {
   "name": "var-name",
   "displayName": "Var Name",
-  "description": "Translate Chinese to programming variable names using AI models",
+  "description": "%var-name.description%",
   "version": "0.0.2",
+  "private": true,
   "icon": "images/logo.png",
   "publisher": "w2xi",
   "repository": {
@@ -18,11 +19,12 @@
     "onCommand:var-name.translate"
   ],
   "main": "./out/extension.js",
+  "l10n": "./l10n",
   "contributes": {
     "commands": [
       {
         "command": "var-name.translate",
-        "title": "AI Translate to Variable Names"
+        "title": "%var-name.translate.title%"
       }
     ],
     "keybindings": [
@@ -43,21 +45,21 @@
             "openai",
             "qwen"
           ],
-          "description": "AI provider to use for translation"
+          "description": "%var-name.provider.description%"
         },
         "var-name.apiKey": {
           "type": "string",
-          "description": "API key for the selected AI provider"
+          "description": "%var-name.apiKey.description%"
         },
         "var-name.baseUrl": {
           "type": "string",
           "default": "https://api.deepseek.com/v1/chat/completions",
-          "description": "Custom base URL for API (optional)"
+          "description": "%var-name.baseUrl.description%"
         },
         "var-name.model": {
           "type": "string",
           "default": "deepseek-chat",
-          "description": "Model name to use"
+          "description": "%var-name.model.description%"
         }
       }
     }
@@ -66,11 +68,15 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "release": "bumpp --commit --push --tag && npx vsce publish"
+    "release": "bumpp --commit --push --tag && npx vsce publish",
+    "l10n": "vscode-l10n-dev export ./src",
+    "l10n:watch": "vscode-l10n-dev watch ./src"
   },
   "devDependencies": {
     "@types/node": "16.x",
     "@types/vscode": "^1.74.0",
+    "@vscode/l10n": "^0.0.18",
+    "@vscode/l10n-dev": "^0.0.35",
     "typescript": "^4.9.4"
   },
   "dependencies": {

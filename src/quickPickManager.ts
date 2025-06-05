@@ -12,35 +12,35 @@ export class QuickPickManager {
       {
         label: `$(symbol-variable) ${translations.camelCase}`,
         description: "camelCase",
-        detail: "驼峰命名法 - 适用于变量名、函数名",
+        detail: vscode.l10n.t("Camel Case - For variable names and function names"),
         value: translations.camelCase,
         format: "camelCase",
       },
       {
         label: `$(symbol-class) ${translations.PascalCase}`,
         description: "PascalCase",
-        detail: "帕斯卡命名法 - 适用于类名、组件名",
+        detail: vscode.l10n.t("Pascal Case - For class names and component names"),
         value: translations.PascalCase,
         format: "PascalCase",
       },
       {
         label: `$(symbol-method) ${translations.snake_case}`,
         description: "snake_case",
-        detail: "下划线命名法 - 适用于Python、数据库字段",
+        detail: vscode.l10n.t("Snake Case - For Python and database fields"),
         value: translations.snake_case,
         format: "snake_case",
       },
       {
         label: `$(symbol-constant) ${translations.CONSTANT_CASE}`,
         description: "CONSTANT_CASE",
-        detail: "常量命名法 - 适用于常量定义",
+        detail: vscode.l10n.t("Constant Case - For constant definitions"),
         value: translations.CONSTANT_CASE,
         format: "CONSTANT_CASE",
       },
       {
         label: `$(symbol-string) ${translations["kebab-case"]}`,
         description: "kebab-case",
-        detail: "短横线命名法 - 适用于CSS类名、文件名",
+        detail: vscode.l10n.t("Kebab Case - For CSS class names and file names"),
         value: translations["kebab-case"],
         format: "kebab-case",
       },
@@ -48,7 +48,7 @@ export class QuickPickManager {
 
     const quickPick = vscode.window.createQuickPick<TranslationQuickPickItem>()
     quickPick.items = items
-    quickPick.placeholder = "选择要复制的命名格式（回车复制到剪贴板）"
+    quickPick.placeholder = vscode.l10n.t("Select naming format to copy (Enter to copy to clipboard)")
     quickPick.canSelectMany = false
 
     quickPick.onDidChangeSelection(async (selection) => {
@@ -56,7 +56,10 @@ export class QuickPickManager {
         const selectedItem = selection[0]
         await this.copyToClipboard(selectedItem.value)
 
-        vscode.window.showInformationMessage(`已复制 ${selectedItem.format}: ${selectedItem.value}`, { modal: false })
+        vscode.window.showInformationMessage(
+          vscode.l10n.t("Copied {0}: {1}", selectedItem.format, selectedItem.value),
+          { modal: false }
+        )
 
         quickPick.hide()
       }
@@ -73,7 +76,9 @@ export class QuickPickManager {
     try {
       await vscode.env.clipboard.writeText(text)
     } catch (error) {
-      vscode.window.showErrorMessage(`复制失败: ${error instanceof Error ? error.message : "未知错误"}`)
+      vscode.window.showErrorMessage(
+        vscode.l10n.t("Copy failed: {0}", error instanceof Error ? error.message : vscode.l10n.t("Unknown error"))
+      )
     }
   }
 }

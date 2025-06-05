@@ -1,0 +1,23 @@
+{
+    "Please configure API Key in settings first": "Please configure API Key in settings first",
+    "Invalid API Key, please check your configuration": "Invalid API Key, please check your configuration",
+    "API rate limit exceeded, please try again later": "API rate limit exceeded, please try again later",
+    "Request timeout, please check your network connection": "Request timeout, please check your network connection",
+    "API call failed: {0}": "API call failed: {0}",
+    "Missing required field: {0}": "Missing required field: {0}",
+    "Enter text to translate": "Enter text to translate",
+    "Example: Show modal dialog": "Example: Show modal dialog",
+    "Please enter valid text": "Please enter valid text",
+    "Translating...": "Translating...",
+    "Translation failed: {0}": "Translation failed: {0}",
+    "Operation failed: {0}": "Operation failed: {0}",
+    "Unknown error": "Unknown error",
+    "Camel Case - For variable names and function names": "Camel Case - For variable names and function names",
+    "Pascal Case - For class names and component names": "Pascal Case - For class names and component names",
+    "Snake Case - For Python and database fields": "Snake Case - For Python and database fields",
+    "Constant Case - For constant definitions": "Constant Case - For constant definitions",
+    "Kebab Case - For CSS class names and file names": "Kebab Case - For CSS class names and file names",
+    "Select naming format to copy (Enter to copy to clipboard)": "Select naming format to copy (Enter to copy to clipboard)",
+    "Copied {0}: {1}": "Copied {0}: {1}",
+    "Copy failed: {0}": "Copy failed: {0}"
+}

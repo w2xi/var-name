@@ -1,0 +1,23 @@
+{
+    "Please configure API Key in settings first": "请先在设置中配置API Key",
+    "Invalid API Key, please check your configuration": "API Key 无效，请检查配置",
+    "API rate limit exceeded, please try again later": "API 调用频率超限，请稍后重试",
+    "Request timeout, please check your network connection": "请求超时，请检查网络连接",
+    "API call failed: {0}": "API 调用失败: {0}",
+    "Missing required field: {0}": "缺少必需的字段: {0}",
+    "Enter text to translate": "请输入要翻译的文本",
+    "Example: Show modal dialog": "例如：是否显示弹窗",
+    "Please enter valid text": "请输入有效的文本",
+    "Translating...": "正在翻译...",
+    "Translation failed: {0}": "翻译失败: {0}",
+    "Operation failed: {0}": "操作失败: {0}",
+    "Unknown error": "未知错误",
+    "Camel Case - For variable names and function names": "驼峰命名法 - 适用于变量名、函数名",
+    "Pascal Case - For class names and component names": "帕斯卡命名法 - 适用于类名、组件名",
+    "Snake Case - For Python and database fields": "下划线命名法 - 适用于Python、数据库字段",
+    "Constant Case - For constant definitions": "常量命名法 - 适用于常量定义",
+    "Kebab Case - For CSS class names and file names": "短横线命名法 - 适用于CSS类名、文件名",
+    "Select naming format to copy (Enter to copy to clipboard)": "选择要复制的命名格式（回车复制到剪贴板）",
+    "Copied {0}: {1}": "已复制 {0}: {1}",
+    "Copy failed: {0}": "复制失败: {0}"
+}
