@@ -70,6 +70,7 @@ export class TranslationProvider {
           ],
           temperature: 0.1,
           max_tokens: 500,
+          enable_thinking: false,
         },
         {
           headers: {
