@@ -2,7 +2,9 @@
 
 English | [中文](./README-zh_CN.md)
 
-A VSCode extension powered by large language models that translates Chinese text into various programming language variable naming conventions.
+A VSCode extension powered by large language models that translates text into various programming language variable naming conventions.
+
+> 🤖 The extension uses SiliconFlow's Qwen/QwQ-32B free model by default, which can be used out of the box.
 
 ## ✨ Features
 

@@ -4,6 +4,8 @@
 
 一个基于大模型的VSCode插件，用于将中文翻译成多种编程语言的变量命名格式。
 
+> 🤖 插件默认使用了硅基流动(siliconflow) 的 Qwen/QwQ-32B 免费模型，可以开箱即用。
+
 ## ✨ 功能特性
 
 - 🚀 快捷键调用（Ctrl+Shift+T / Cmd+Shift+T）
