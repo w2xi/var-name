@@ -1,10 +1,19 @@
-# 🔤 Var Name
+<div align="center">
+
+<img src="./images/logo.png" width="180" height="180" />
+
+# Var Name
+
+一个基于大模型 API 的 VSCode 插件，用于将中文翻译成多种编程语言的变量命名格式。
+
+🤖 插件默认使用了 [硅基流动的Qwen/QwQ-32B](https://docs.siliconflow.cn/cn/api-reference/chat-completions/chat-completions#llm) 免费模型，可以开箱即用。
 
 [English](./README.md) | 中文
 
-一个基于大模型的VSCode插件，用于将中文翻译成多种编程语言的变量命名格式。
+<img src="./images/banner.png" alt="Banner" width="60%" />
 
-> 🤖 插件默认使用了硅基流动(siliconflow) 的 Qwen/QwQ-32B 免费模型，可以开箱即用。
+</div>
+
 
 ## ✨ 功能特性
 

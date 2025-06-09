@@ -1,10 +1,18 @@
-# 🔤 Var Name
+<div align="center">
+
+<img src="./images/logo.png" width="180" height="180" />
+
+# Var Name
+
+A VSCode extension powered by LLM API that translates text into various programming language variable naming conventions.
+
+🤖 The extension uses [SiliconFlow's Qwen/QwQ-32B](https://docs.siliconflow.cn/en/api-reference/chat-completions/chat-completions) free model by default, which can be used out of the box.
 
 English | [中文](./README-zh_CN.md)
 
-A VSCode extension powered by large language models that translates text into various programming language variable naming conventions.
+<img src="./images/banner.png" alt="Banner" width="60%" />
 
-> 🤖 The extension uses SiliconFlow's Qwen/QwQ-32B free model by default, which can be used out of the box.
+</div>
 
 ## ✨ Features
 
